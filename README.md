@@ -70,14 +70,14 @@ You will see all datas
 
 get course by id
 
-For get specific course use ```get``` method on postman, paste this link ```http://127.0.0.1:8000/api/v1/courses/here_is_id/``` and click ```send```
+For get specific course use ```get``` method on postman, paste this link ```http://127.0.0.1:8000/api/v1/courses/{your_id}/``` and click ```send```
 
-you will see couse with ID that you paste on `/here_is_id/` previos link
+you will see couse with ID that you paste on `/{your_id}/` previos link
 
 ## DELETE
 delete specific course
 
-For delete specific course use ```delete``` method on postman, paste this link ```http://127.0.0.1:8000/api/v1/courses/here_is_id/``` and click ```send```
+For delete specific course use ```delete``` method on postman, paste this link ```http://127.0.0.1:8000/api/v1/courses/{your_id}/``` and click ```send```
 You will see 
 ```json 
 "object with id: 2 has been deleted"
