@@ -75,7 +75,7 @@ DATABASES = {
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
-        'PORT': '',
+        'PORT': config('DB_PORT'),
     }
 }
 prod_db = dj_database_url.config(conn_max_age=500)
