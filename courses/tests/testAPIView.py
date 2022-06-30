@@ -6,6 +6,7 @@ from courses.models import Course
 
 class TestListCreateCourses(APITestCase):
 
+
     def setUp(self):
         self.course_url = reverse('courses')
 

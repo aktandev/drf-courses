@@ -1,1 +1,1 @@
-web: python manage.py runserver 0.0.0.1:\
+web: gunicorn CoursesApp.wsgi --log-file -

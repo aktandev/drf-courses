@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config, Csv
+import dj_database_url
 import os
 
 
@@ -26,20 +27,25 @@ INSTALLED_APPS = [
 
     'courses.apps.CoursesConfig',
     'rest_framework'
+    'corsheaders',
 ]
 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
 
 
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'CoursesApp.urls'
 
 
@@ -75,6 +81,10 @@ DATABASES = {
 }
 
 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -97,8 +107,12 @@ USE_I18N = True
 USE_TZ = True
 
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR / 'static')
+STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
