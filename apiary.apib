@@ -1,0 +1,102 @@
+FORMAT: 1A
+HOST: https://courses.apiblueprint.org/
+
+# Course App API
+
+### List Of All Courses [GET]
+[
+    {
+     "category": [
+        {
+            "name": "Programming",
+            "imgpath": "/media"
+        }
+     ],
+    "contact": [
+        {
+            "suit": 3,
+            "value": "codem1de@course.com"
+        }
+    ],
+    "branch": [
+        {
+            "latitude": 1,
+            "longitude": 2,
+            "address": "chuyi street 12"
+        }
+    ],
+    "name": "CodeMind",
+    "description": "Be powerfull coder ",
+    "logo": "logo.png"
+}
+        ]
++ Response 204
+
+
+
+### Create a New Course [POST]
+
+    {
+     "category": [
+        {
+            "name": "Programming",
+            "imgpath": "/media"
+        }
+     ],
+    "contact": [
+        {
+            "suit": 3,
+            "value": "codem1de@course.com"
+        }
+    ],
+    "branch": [
+        {
+            "latitude": 1,
+            "longitude": 2,
+            "address": "chuyi street 12"
+        }
+    ],
+    "name": "CodeMind",
+    "description": "Be powerfull coder ",
+    "logo": "logo.png"
+    }
++ Response 204
+
+
+
+## Get Spesifice Course [api/v1/courses/<int:pk>/]
+
+### View a Course Detail [GET]
+
+            {
+    "category": [
+        {
+            "name": "Programming",
+            "imgpath": "/media"
+        }
+    ],
+    "contact": [
+        {
+            "suit": 3,
+            "value": "codem1de@course.com"
+        }
+    ],
+    "branch": [
+        {
+            "latitude": 1,
+            "longitude": 2,
+            "address": "chuyi street 12"
+        }
+    ],
+    "name": "CodeMind",
+    "description": "Be powerfull coder ",
+    "logo": "logo.png"
+}
+    + Response 204
+
+
+
+## Delete Course [api/v1/courses/<int:pk>/]
+### Delete Course [DELETE]
+
++ Response 204
