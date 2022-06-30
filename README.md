@@ -7,7 +7,7 @@ Getting Started
 
 Go to the directory where the requirements.txt and in the terminal enter this:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements
 ```
 
 
