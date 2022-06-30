@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'courses.apps.CoursesConfig',
-    'rest_framework'
+    'rest_framework',
     'corsheaders',
 ]
 
@@ -114,8 +114,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import django_heroku
 django_heroku.settings(locals())
