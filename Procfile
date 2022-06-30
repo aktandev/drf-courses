@@ -1,1 +1,1 @@
-web: gunicorn drf-courses.wsgi --log-file--
+web: gunicorn CoursesApp.wsgi --log-file--
