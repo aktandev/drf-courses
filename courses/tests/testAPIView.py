@@ -61,18 +61,20 @@ class TestCourseDetailView(APITestCase):
 
     def test_course_get(self):
         course = self.create_course()
-        self.response = self.client.get(reverse('course', kwargs={'pk':course.id}))
+        self.response = self.client.get(reverse('course', kwargs={'pk':course.pk}))
         self.assertEqual(self.response.status_code, status.HTTP_200_OK)
 
     def test_course_get_does_not_exist(self):
-        self.response = self.client.get(reverse('course', kwargs={'pk': 1}))
-        self.assertEqual(self.response.status_code, status.HTTP_404_NOT_FOUND)
+        course = self.create_course()
+        self.response = self.client.get(reverse('course', kwargs={'pk': course.pk}))
+        self.assertNotEqual(self.response.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_course_delete(self):
-        course_data = self.create_course()
-        self.response = self.client.delete(reverse('course', kwargs={'pk':course_data.id}))
-        self.assertEqual(self.response.status_code, status.HTTP_200_OK)
+        course = self.create_course()
+        self.response = self.client.delete(reverse('course', kwargs={'pk':course.pk}))
+        self.assertEqual(self.response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_course_delete_does_not_exist(self):
-        self.response = self.client.delete(reverse('course', kwargs={'pk': 1}))
-        self.assertEqual(self.response.status_code, status.HTTP_404_NOT_FOUND)
+        course = self.create_course()
+        self.response = self.client.delete(reverse('course', kwargs={'pk': course.pk}))
+        self.assertNotEqual(self.response.status_code, status.HTTP_404_NOT_FOUND)
