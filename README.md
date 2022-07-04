@@ -1,7 +1,7 @@
 # Django Rest Framework First Project
 This app is realized GET, POST and DELETE methods of API using Django-Rest-Framework
 
-###[Link to deployed project](https://heroku-courses-api-app.herokuapp.com/api/v1/courses/)
+[Link to deployed project](https://heroku-courses-api-app.herokuapp.com/api/v1/courses/)
 
 Getting Started
 ----
